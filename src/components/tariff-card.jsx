@@ -3,9 +3,9 @@ import "./tariff-card.css";
 function CardTariff(props) {
   let coloring =
     props.price === "300"
-      ? "#5bdbff"
+      ? "#32a1c0"
       : props.price === "450"
-      ? "#5bffa8"
+      ? "#48c783"
       : props.price === "550"
       ? "#ff5b5b"
       : "#302f2f";
@@ -16,13 +16,13 @@ function CardTariff(props) {
         <h2>Безлимитный {props.price}</h2>
       </div>
       <div className="card__price" style={{ backgroundColor: coloring }}>
-        <p>руб</p>
+        <p>руб&ensp;</p>
         <p>
-          <span>{props.price}</span> / мес
+          <span>{props.price}</span>&ensp;/мес
         </p>
       </div>
       <div className="card__speed">
-        <p>До {props.speed} Мбит/сек</p>
+        <p>до {props.speed} Мбит/сек</p>
       </div>
       <div className="card__description">
         <p>Объем включенного трафика не ограничен</p>
