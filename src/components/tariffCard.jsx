@@ -1,4 +1,4 @@
-import "./tariff-card.css";
+import "./tariffCard.css";
 
 function CardTariff(props) {
   let coloring =

@@ -1,4 +1,4 @@
-import CardTariff from "./tariff-card";
+import CardTariff from "./tariffCard";
 import React from "react";
 
 function TariffList() {
