@@ -1,4 +1,5 @@
 import "./tariffCard.css";
+import { useState } from "react";
 
 function CardTariff(props) {
   let coloring =
@@ -10,8 +11,15 @@ function CardTariff(props) {
       ? "#ff5b5b"
       : "#302f2f";
 
+  const [cardClass, setCardClass] = useState("card");
+
+  const changeStyle = () => {
+    if (cardClass !== "card") setCardClass("card");
+    else setCardClass("card_chosen");
+  };
+
   return (
-    <div className="card">
+    <button className={cardClass} onClick={changeStyle}>
       <div className="card__title" style={{ backgroundColor: coloring }}>
         <h2>Безлимитный {props.price}</h2>
       </div>
@@ -27,7 +35,7 @@ function CardTariff(props) {
       <div className="card__description">
         <p>Объем включенного трафика не ограничен</p>
       </div>
-    </div>
+    </button>
   );
 }
 
