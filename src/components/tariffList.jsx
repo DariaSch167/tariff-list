@@ -1,5 +1,7 @@
-import CardTariff from "./TariffCard";
+import CardTariff from "./TariffCard.jsx";
 import React from "react";
+import "./tariffCard.css";
+import { useState } from "react";
 
 const tariffs = [
   { price: "300", speed: "10" },
@@ -9,10 +11,21 @@ const tariffs = [
 ];
 
 function TariffList() {
+  const [cardClass, setCardClass] = useState("card");
+
+  const changeStyle = () => {
+    if (cardClass !== "card") setCardClass("card");
+    else setCardClass("card_chosen");
+  };
+
   return (
     <React.Fragment>
       {tariffs.map((item, index) => {
-        return <CardTariff key={index} price={item.price} speed={item.speed} />;
+        return (
+          <button className={cardClass} onClick={changeStyle}>
+            <CardTariff key={index} price={item.price} speed={item.speed} />
+          </button>
+        );
       })}
     </React.Fragment>
   );
