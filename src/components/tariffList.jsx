@@ -11,19 +11,20 @@ const tariffs = [
 ];
 
 function TariffList() {
-  const [cardClass, setCardClass] = useState("card");
+  const [cardClass, setCardClass] = useState("null");
 
   return (
     <React.Fragment>
       {tariffs.map((item, index) => {
-        const changeStyle = () => {
-          if (cardClass !== "card") setCardClass("card");
-          else setCardClass("card_chosen");
-        };
         return (
-          <button className={cardClass} onClick={changeStyle}>
-            <CardTariff key={index} price={item.price} speed={item.speed} />
-          </button>
+          <CardTariff
+            key={index}
+            price={item.price}
+            speed={item.speed}
+            card={cardClass}
+            active={() => setCardClass(index)}
+            id={index}
+          />
         );
       })}
     </React.Fragment>
